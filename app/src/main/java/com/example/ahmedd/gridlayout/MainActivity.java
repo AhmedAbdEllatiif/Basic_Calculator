@@ -190,15 +190,14 @@ public class MainActivity extends AppCompatActivity  {
                 }
 
                 else if (!txtFinalResult.getText().toString().equals("") && txtClac.getText().toString().equals("")){
-                    txtClac.setText(txtFinalResult.getText().toString());
+                    txtClac.setText(txtFinalResult.getText().toString() );
                 }
 
-                else {
-                    compute();
-                    charOpe = Addtion;
-                    txtResult.setText(txtClac.getText().toString() + "+");
-                    txtClac.setText(null);
-                }
+                else
+                compute();
+                charOpe = Addtion;
+                txtResult.setText(txtClac.getText().toString() + "+");
+                txtClac.setText(null);
             }
         });
         btnSub.setOnClickListener(new View.OnClickListener() {
@@ -211,13 +210,13 @@ public class MainActivity extends AppCompatActivity  {
                 else if (!txtFinalResult.getText().toString().equals("") && txtClac.getText().toString().equals("")){
                     txtClac.setText(txtFinalResult.getText().toString());
                 }
-                else {
 
+                else
                     compute();
                     charOpe = Subtruction;
                     txtResult.setText(txtClac.getText() + "-");
                     txtClac.setText(null);
-                }
+
             }
         });
         btnMulti.setOnClickListener(new View.OnClickListener() {
@@ -230,12 +229,12 @@ public class MainActivity extends AppCompatActivity  {
                 else if (!txtFinalResult.getText().toString().equals("") && txtClac.getText().toString().equals("")){
                     txtClac.setText(txtFinalResult.getText().toString());
                 }
-                else{
+
+                else
                     compute();
-                    charOpe = Multiplication;
-                    txtResult.setText(txtClac.getText().toString() + "*");
-                    txtClac.setText(null);
-                }
+                charOpe = Multiplication;
+                txtResult.setText(txtClac.getText() + "*");
+                txtClac.setText(null);
             }
         });
         btnDiv.setOnClickListener(new View.OnClickListener() {
@@ -248,12 +247,12 @@ public class MainActivity extends AppCompatActivity  {
                 else if (!txtFinalResult.getText().toString().equals("") && txtClac.getText().toString().equals("")){
                     txtClac.setText(txtFinalResult.getText().toString());
                 }
-                else {
+                else
                     compute();
                     charOpe = Divison;
-                    txtResult.setText(txtClac.getText().toString() + "/");
+                    txtResult.setText(txtClac.getText() + "÷");
                     txtClac.setText(null);
-                }
+
             }
         });
 
@@ -287,15 +286,19 @@ public class MainActivity extends AppCompatActivity  {
         btnModules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(txtClac.getText().toString().equals("")){
+                if(txtClac.getText().toString().equals("") && txtFinalResult.getText().toString().equals("") ){
                     txtClac.setText(null);
                 }
-                else{
-                    compute();
-                    charOpe = mod;
-                    txtResult.setText(txtClac.getText().toString() + "%");
-                    txtClac.setText(null);
+
+                else if (!txtFinalResult.getText().toString().equals("") && txtClac.getText().toString().equals("")){
+                    txtClac.setText(txtFinalResult.getText().toString());
                 }
+                else
+                compute();
+                charOpe = mod;
+                txtResult.setText(txtClac.getText() + "%");
+                txtClac.setText(null);
+
             }
         });
 

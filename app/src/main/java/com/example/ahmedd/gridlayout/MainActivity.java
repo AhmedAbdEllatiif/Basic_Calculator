@@ -26,10 +26,12 @@ public class MainActivity extends AppCompatActivity  {
     private Button btnDot;
     private Button btnClr;
     private Button btnEqual;
-    private TextView txtResult;
-    private TextView txtClac;
     private Button btnFilp;
     private Button btnModules;
+    private TextView txtResult;
+    private TextView txtClac;
+    private TextView txtFinalResult;
+
 
     //operation
     private final char Addtion = '+';
@@ -68,6 +70,7 @@ public class MainActivity extends AppCompatActivity  {
 
         txtResult = (TextView) findViewById(R.id.txtResult);
         txtClac = (TextView) findViewById(R.id.txtCalc);
+        txtFinalResult = (TextView) findViewById(R.id.txtFinalResult);
 
     }
 
@@ -292,7 +295,8 @@ public class MainActivity extends AppCompatActivity  {
                     compute();
                     charOpe = Equ;
                     txtResult.setText(txtResult.getText().toString() + String.valueOf(num2) + "=" + String.valueOf(num1));
-                    txtClac.setText(String.valueOf(num1));
+                    txtClac.setText(null);
+                    txtFinalResult.setText(String.valueOf(num1));
                 }
             }
         });

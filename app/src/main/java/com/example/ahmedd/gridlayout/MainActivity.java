@@ -185,9 +185,14 @@ public class MainActivity extends AppCompatActivity  {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(txtClac.getText().toString().equals("")){
+                if(txtClac.getText().toString().equals("") && txtFinalResult.getText().toString().equals("") ){
                     txtClac.setText(null);
                 }
+
+                else if (!txtFinalResult.getText().toString().equals("") && txtClac.getText().toString().equals("")){
+                    txtClac.setText(txtFinalResult.getText().toString());
+                }
+
                 else {
                     compute();
                     charOpe = Addtion;
@@ -199,8 +204,12 @@ public class MainActivity extends AppCompatActivity  {
         btnSub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(txtClac.getText().toString().equals("")){
+                if(txtClac.getText().toString().equals("") && txtFinalResult.getText().toString().equals("") ){
                     txtClac.setText(null);
+                }
+
+                else if (!txtFinalResult.getText().toString().equals("") && txtClac.getText().toString().equals("")){
+                    txtClac.setText(txtFinalResult.getText().toString());
                 }
                 else {
 
@@ -214,8 +223,12 @@ public class MainActivity extends AppCompatActivity  {
         btnMulti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(txtClac.getText().toString().equals("")){
+                if(txtClac.getText().toString().equals("") && txtFinalResult.getText().toString().equals("") ){
                     txtClac.setText(null);
+                }
+
+                else if (!txtFinalResult.getText().toString().equals("") && txtClac.getText().toString().equals("")){
+                    txtClac.setText(txtFinalResult.getText().toString());
                 }
                 else{
                     compute();
@@ -228,9 +241,14 @@ public class MainActivity extends AppCompatActivity  {
         btnDiv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(txtClac.getText().toString().equals("")){
+                if(txtClac.getText().toString().equals("") && txtFinalResult.getText().toString().equals("") ){
                     txtClac.setText(null);
-                }else {
+                }
+
+                else if (!txtFinalResult.getText().toString().equals("") && txtClac.getText().toString().equals("")){
+                    txtClac.setText(txtFinalResult.getText().toString());
+                }
+                else {
                     compute();
                     charOpe = Divison;
                     txtResult.setText(txtClac.getText().toString() + "/");
